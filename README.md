@@ -53,5 +53,18 @@ Project Organization
 
 
 --------
+## Prepare data.
+### 1. Download <a target="_blank" href="https://grouplens.org/datasets/movielens/25m/">MovieLens</a> dataset.
+```shell
+wget --directory-prefix=data/raw/ https://files.grouplens.org/datasets/movielens/ml-25m.zip
+unzip data/raw/ml-25m.zip -d data/raw/
+cp data/raw/ml-25m/* data/raw/
+rm -rf data/raw/ml-25m
+rm -rf data/raw/ml-25m.zip
+```
+### 2. Download movies overview from <a target="_blank" href="https://www.themoviedb.org/">TMDB</a>.
+```shell
+python src/data/download_overview.py --api_key #YOUR_API_KEY#
+```
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
